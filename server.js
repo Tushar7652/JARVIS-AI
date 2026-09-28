@@ -28,6 +28,7 @@ app.use(cors({
     "http://localhost:5173"
   ]
 }));
+app.options(/.*/, cors());
 app.use(express.json({ limit: '8mb' }));
 app.use(express.static('public'));
 
