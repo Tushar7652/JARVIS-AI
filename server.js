@@ -21,7 +21,13 @@ if (process.env.MONGODB_URI) {
     .catch((err) => console.error('MongoDB connection error:', err.message));
 }
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://jarvis-ai-one-flax.vercel.app",
+    "https://jarvis-ai-bz01cebjr-eren7652s-projects.vercel.app",
+    "http://localhost:5173"
+  ]
+}));
 app.use(express.json({ limit: '8mb' }));
 app.use(express.static('public'));
 
