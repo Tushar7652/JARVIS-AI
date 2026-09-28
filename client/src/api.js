@@ -1,6 +1,6 @@
 const TOKEN_KEY = 'jarvis-token';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://jarvis-ai-tmoz.onrender.com";
 
 export function getToken() {
   return localStorage.getItem(TOKEN_KEY);
