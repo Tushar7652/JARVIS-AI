@@ -6,7 +6,7 @@
 
 An advanced AI assistant inspired by Iron Man's JARVIS, built using the MERN stack, Google Authentication, and Google's Gemini AI.
 
-LIVE DEMO-https://jarvis-ai-one-flax.vercel.app/
+LIVE DEMO-https://jarvis-bzo1cebjr-eren7652s-projects.vercel.app/
 
 </div>
 
