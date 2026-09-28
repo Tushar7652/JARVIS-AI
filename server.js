@@ -21,14 +21,29 @@ if (process.env.MONGODB_URI) {
     .catch((err) => console.error('MongoDB connection error:', err.message));
 }
 
-app.use(cors({
-  origin: [
-    "https://jarvis-ai-one-flax.vercel.app",
-    "https://jarvis-ai-bz01cebjr-eren7652s-projects.vercel.app",
-    "http://localhost:5173"
-  ]
-}));
-app.options(/.*/, cors());
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+
+  if (origin) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET,POST,PUT,DELETE,OPTIONS"
+  );
+
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-Type,Authorization"
+  );
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
 app.use(express.json({ limit: '8mb' }));
 app.use(express.static('public'));
 
