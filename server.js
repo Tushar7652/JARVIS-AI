@@ -44,6 +44,9 @@ app.use((req, res, next) => {
 
   next();
 });
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 app.use(express.json({ limit: '8mb' }));
 app.use(express.static('public'));
 
