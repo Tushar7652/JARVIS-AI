@@ -52,6 +52,6 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/conversations', conversationRoutes);
 app.use('/api/image', imageRoutes);
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`JARVIS server online at http://localhost:${PORT}`);
 });
